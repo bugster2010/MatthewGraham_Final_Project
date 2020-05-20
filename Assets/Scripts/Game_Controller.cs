@@ -17,7 +17,7 @@ public class Game_Controller : MonoBehaviour
     public AudioClip gameSong;
     public AudioClip winEffect;
 
-    public 
+    
     // Start is called before the first frame update
     void Start()
     {

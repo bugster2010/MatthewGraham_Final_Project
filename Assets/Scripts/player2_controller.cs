@@ -8,8 +8,13 @@ public class player2_controller : MonoBehaviour
     public bool hasBall;
     private bool pause;
     private int playerNum;
-    public Rigidbody2D rb;
+
+    public Transform ballShot;
+    public float ballShotSpeed = 5f;
+
+    private Rigidbody2D rb;
     public GameObject ball;
+
     public Animator animator;
 
     void Start()
