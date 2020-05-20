@@ -10,6 +10,7 @@ public class player2_controller : MonoBehaviour
     private int playerNum;
     public Rigidbody2D rb;
     public GameObject ball;
+    public Animator animator;
 
     void Start()
     {
@@ -22,6 +23,7 @@ public class player2_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animator.SetBool("BallAnim", hasBall);
         if (pause == false)
         {
             Move();
@@ -54,7 +56,7 @@ public class player2_controller : MonoBehaviour
 
     void Shoot()
     {
-        if (Input.GetAxis("RBButton2")==1 && hasBall)
+        if (Input.GetAxis("RTButton2")>0.5 && hasBall)
         {
             GameObject.Instantiate(ball, transform);
         }

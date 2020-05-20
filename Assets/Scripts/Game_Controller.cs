@@ -14,10 +14,14 @@ public class Game_Controller : MonoBehaviour
     private int ballLeft;
     private int ballRight;
 
+    public AudioClip gameSong;
+    public AudioClip winEffect;
+
     public 
     // Start is called before the first frame update
     void Start()
     {
+        AudioSource.PlayClipAtPoint(gameSong, Vector3.zero);
         pause = false;
     }
 
@@ -57,10 +61,13 @@ public class Game_Controller : MonoBehaviour
         if (ballRight == 0 && ballLeft == 12)
         {
             pScr.GameWin("Right Player");
+            AudioSource.PlayClipAtPoint(winEffect, Vector3.zero);
         }
         if (ballLeft == 0 && ballRight == 12)
         {
             pScr.GameWin("Left Player");
+            AudioSource.PlayClipAtPoint(winEffect, Vector3.zero);
+
         }
     }
     void PauseGame()
