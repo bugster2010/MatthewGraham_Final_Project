@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Threading;
+using UnityEngine.SceneManagement;
 
 public class Game_Controller : MonoBehaviour
 {
@@ -62,17 +64,21 @@ public class Game_Controller : MonoBehaviour
         {
             pScr.GameWin("Right Player");
             AudioSource.PlayClipAtPoint(winEffect, Vector3.zero);
+            Thread.Sleep(5000);
+            SceneManager.LoadScene("MainMenu");
         }
         if (ballLeft == 0 && ballRight == 12)
         {
             pScr.GameWin("Left Player");
             AudioSource.PlayClipAtPoint(winEffect, Vector3.zero);
+            Thread.Sleep(5000);
+            SceneManager.LoadScene("MainMenu");
 
         }
     }
     void PauseGame()
     {
-        if(Input.GetAxis("PauseButton") > 0)
+        if(Input.GetAxisRaw("PauseButton") >.99f)
         {
             if(pause == true)
             {
@@ -101,6 +107,7 @@ public class Game_Controller : MonoBehaviour
                 }
 
             }
+            Thread.Sleep(500);
         }
     }
 }

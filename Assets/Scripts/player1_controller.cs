@@ -10,7 +10,7 @@ public class player1_controller : MonoBehaviour
     private int playerNum;
 
     public Transform ballShot;
-    public float ballShotSpeed = 5f;
+    public float ballShotSpeed = 50f;
     
     private Rigidbody2D rb;
     public GameObject ball;
@@ -62,7 +62,7 @@ public class player1_controller : MonoBehaviour
         {
             GameObject spawnedBall = Instantiate(ball, ballShot.position, ballShot.rotation);
             Rigidbody2D rbB = spawnedBall.GetComponent<Rigidbody2D>();
-            rbB.AddForce(ballShot.forward * ballShotSpeed, ForceMode2D.Impulse);
+            rbB.AddForce(ballShot.up * ballShotSpeed, ForceMode2D.Impulse);
             hasBall = false;
 
         }

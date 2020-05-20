@@ -65,20 +65,21 @@ public class player2_controller : MonoBehaviour
         {
             GameObject spawnedBall = Instantiate(ball, ballShot.position, ballShot.rotation);
             Rigidbody2D rbB = spawnedBall.GetComponent<Rigidbody2D>();
-            rbB.AddForce(ballShot.up * ballShotSpeed, ForceMode2D.Impulse);
+            rbB.AddForce(ballShot.forward * ballShotSpeed, ForceMode2D.Impulse);
             hasBall = false;
         }
     }
 
     public void Pause()
     {
-        pause = true;
+        if (pause)
+        {
+            pause = false;
+        }
+        else
+        {
+            pause = true;
+        }
     }
-
-    public void Unpause()
-    {
-
-    }
-
 
 }
