@@ -1721,10 +1721,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de7b4fa441fadc47a3f8e733478bb47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 12
   hasBall: 1
   ballShot: {fileID: 1599715414}
-  ballShotSpeed: 0
+  ballShotSpeed: 8
   ball: {fileID: 6070443083452808802, guid: ca1a52dd5669fa64cbbb3132849e5d0d, type: 3}
   animator: {fileID: 112297219}
 --- !u!50 &112297222
@@ -3158,10 +3158,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3864d8e125cfc22418298b0aa1200fcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 12
   hasBall: 0
   ballShot: {fileID: 56225774}
-  ballShotSpeed: 0
+  ballShotSpeed: 8
   ball: {fileID: 6070443083452808802, guid: ca1a52dd5669fa64cbbb3132849e5d0d, type: 3}
   animator: {fileID: 1799070434}
 --- !u!50 &1799070437

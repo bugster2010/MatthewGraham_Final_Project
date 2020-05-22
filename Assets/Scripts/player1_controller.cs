@@ -61,8 +61,7 @@ public class player1_controller : MonoBehaviour
         if (Input.GetAxis("RTButton1")>0.5 && hasBall)
         {
             GameObject spawnedBall = Instantiate(ball, ballShot.position, ballShot.rotation);
-            Rigidbody2D rbB = spawnedBall.GetComponent<Rigidbody2D>();
-            rbB.AddForce(ballShot.up * ballShotSpeed, ForceMode2D.Impulse);
+            spawnedBall.GetComponent<Rigidbody2D>().AddForce(ballShot.up * ballShotSpeed, ForceMode2D.Impulse);
             hasBall = false;
 
         }

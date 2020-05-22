@@ -15,6 +15,7 @@ public class Game_Controller : MonoBehaviour
     public PauseScreen pScr;
     private int ballLeft;
     private int ballRight;
+    private bool hasWon;
 
     public AudioClip gameSong;
     public AudioClip winEffect;
@@ -25,13 +26,15 @@ public class Game_Controller : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(gameSong, Vector3.zero);
         pause = false;
+        hasWon = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        PauseGame();
-        CheckWin();
+
+            PauseGame();
+            CheckWin();
     }
 
     void CheckWin()
@@ -65,6 +68,7 @@ public class Game_Controller : MonoBehaviour
             pScr.GameWin("Right Player");
             AudioSource.PlayClipAtPoint(winEffect, Vector3.zero);
             Thread.Sleep(5000);
+            hasWon = true;
             SceneManager.LoadScene("MainMenu");
         }
         if (ballLeft == 0 && ballRight == 12)
@@ -73,7 +77,6 @@ public class Game_Controller : MonoBehaviour
             AudioSource.PlayClipAtPoint(winEffect, Vector3.zero);
             Thread.Sleep(5000);
             SceneManager.LoadScene("MainMenu");
-
         }
     }
     void PauseGame()
